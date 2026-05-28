@@ -13,7 +13,7 @@ int main(){
     char c = s[0];
     ll count = 1;
     ll single = 0;
-    ll flag = -1;
+    string flag = "";
     string s1 = "";
     s += ' ';
     for(ll i = 1;i<len+1;++i){
@@ -27,7 +27,7 @@ int main(){
                 //cout<<s1<<'\n';
             }
             if(count%2){
-                flag = i-1;
+                flag = s[i-1];
             }
             c = s[i];
             count = 1;
@@ -38,27 +38,13 @@ int main(){
     if(single>1){
         cout<<"NO SOLUTION";
     }
-    else if(single == 1){
-        // if(s[0] == s[len-1]){
-        //     cout<<s;
-        // }
-        // else if(len%2 == 1){
-            string s2 = "";
-            s2 += s1 + s[flag];
-            reverse(s1.begin(), s1.end());
-            s2 += s1;
-            cout<<s2;
-        // }
-        // else{
-        //     cout<<"NO SOLUTION";
-        // }
-    }
     else{
         string s2 = "";
-            s2 += s1;
-            reverse(s1.begin(), s1.end());
-            s2 += s1;
-            cout<<s2;
+        s2 += s1 + flag;
+        reverse(s1.begin(), s1.end());
+        s2 += s1;
+        cout<<s2;
     }
+
 
 }
