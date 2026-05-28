@@ -1,0 +1,1 @@
+When single == 1, there is exactly one character with odd frequency, which mathematically guarantees the total length is odd. So the s[0] == s[len-1] branch and the NO SOLUTION else branch can never be reached — collapsed everything into the single palindrome construction path.
